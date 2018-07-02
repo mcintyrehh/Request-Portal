@@ -7,3 +7,25 @@ body {
     background-color: whitesmoke;
     color:#353535;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+        justify-content: center;
+    }
+    .control-label {
+        width: 100%;
+        justify-content: center;
+    }
+   
+    .main-box {
+        width: 95vw;
+        margin-bottom: 10px;
+    }
+    .box-header {
+        text-align: center;
+    }
+    
+    
+}

@@ -3,6 +3,7 @@
 var title;
 var year;
 var queryURL;
+var movies = [];
 
 
 $("#search-by-title-button").on('click', function() {
@@ -27,18 +28,19 @@ $("#search-by-title-button").on('click', function() {
     console.log(array.Search[0].Title);
     
     function newCard(x) {
-        // var cardTitle = array.Search[x].Title;
-        // var cardYear = array.Search[x].Year;
+        movies.push(array.Search[x]);
         var cardPoster = array.Search[x].Poster;
         $(".posters").append('<div class="card m-2 bg-dark text-center text-white">'+
         '<img class="card-img" src="'+ cardPoster + '" alt="test poster">'+
-        '<div class="card-img-overlay d-flex flex-column justify-content-end hover-text">'+
-            '<h5 class="card-title movie-name">'+ array.Search[x].Title + '</h5>'+
-            '<p class="card-text movie-year">' + array.Search[x].Title + '</p>'+
+        '<div class="card-img-overlay col-small d-flex flex-column justify-content-end hover-text">'+
+            '<h5 class="card-title col-small movie-name">'+ array.Search[x].Title + '</h5>'+
+            '<p class="card-text col-small movie-year">' + array.Search[x].Year + '</p>'+
+            '<p class="card-text col-small movie-IMDb">IMDb id: ' + array.Search[x].imdbID + '</p>' +
         '</div>'+
     '</div>');
         $(".movie-name").hide(); 
         $(".movie-year").hide();
+        $(".movie-IMDb").hide();
     }   
     for (var i = 0; i<10; i++){   
         newCard(i);
@@ -48,10 +50,12 @@ $("#search-by-title-button").on('click', function() {
           $(this).find(".card-img").css("opacity", "0.2");
           $(this).find(".movie-name").show();
           $(this).find(".movie-year").show();
+          $(this).find(".movie-IMDb").show();
         }, function() {
           $(this).find(".card-img").css("opacity", "1");
           $(this).find(".movie-name").hide();
           $(this).find(".movie-year").hide();
+          $(this).find(".movie-IMDb").hide();
         }
       );
     });
