@@ -9,10 +9,10 @@ $("#search-by-title-button").on('click', function() {
     title = $("#t").val();
     year = $("#y").val();
     if (year && title) {
-        queryURL = "http://www.omdbapi.com/?s=" + title + "&y=" + year + "&type=movie&apikey=e73085d6";
+        queryURL = "https://www.omdbapi.com/?s=" + title + "&y=" + year + "&type=movie&apikey=e73085d6";
     }
     else if (!year) {
-        queryURL="http://www.omdbapi.com/?s=" + title + "&y=&type=movie&apikey=e73085d6";
+        queryURL="https://www.omdbapi.com/?s=" + title + "&y=&type=movie&apikey=e73085d6";
     }
     else {
 
