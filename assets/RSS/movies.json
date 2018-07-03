@@ -1,10 +1,7 @@
-[
+
     {
         "title":"Movie",
         "imdb_id":"tt4881806"
-    },
-    {
-        "title":"Movie 2",
-        "imdb_id":"tt4880180"
     }
-]
+
+
