@@ -7,7 +7,17 @@ body {
     background-color: whitesmoke;
     color:#353535;
 }
-
+.my-face {
+    background-image: url("../images/cropped-shady-eyes.gif");
+    overflow: auto;
+    width: 340px;
+    height: 148px;
+    margin: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    display: none;
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="col-"] {
