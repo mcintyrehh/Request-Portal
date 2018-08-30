@@ -86,7 +86,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-    <!-- <script src="assets/javascript/bundle.js"></script> -->
+    <script>
+        $("body").on("click", ".add-movie", function () {
+            console.log("gotcha!");
+            var newObj = {
+                title: $(this).data("title"),
+                imdb_id: $(this).data("id"),
+                poster_url: $(this).data("url")
+            }
+            var stringNewObj = JSON.stringify(newObj);
+            console.log(stringNewObj);
+        })
+        var currentURL = window.location.origin;
+        $.post(currentURL + "/api/requests", stringNewObj,
+        function(data){
+            // If a table is available... tell user they are booked.
+            if(data == true){
+                alert("Yay! Request submitted!")
+            }
+            // If a table is available... tell user they on the waiting list.
+            if(data == false){
+                alert("Something didn't work...")
+            }
+        });
+    </script>
 </body>
 
 </html>

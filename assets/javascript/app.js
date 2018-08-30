@@ -66,24 +66,6 @@ $("#search-by-title-button").on('click', function () {
             }
         );
     });
-    // $("body").on("click", ".add-movie", function () {
-    //     console.log("gotcha!");
-    //     var newObj = {
-    //         title: $(this).data("title"),
-    //         imdb_id: $(this).data("id"),
-    //         poster_url: $(this).data("url")
-    //     }
-    //     var stringNewObj = JSON.stringify(newObj);
-    //     console.log(stringNewObj);
-    //     fs.appendFile(fileJSON, stringNewObj, function (err) {
-    //         if (err) {
-    //             console.log(err);
-    //         }
-    //         else {
-    //             console.log("Movie Added!")
-    //         }
-    //     })
-    // })
 });
 
 
